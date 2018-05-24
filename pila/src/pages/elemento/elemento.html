@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Página {{ numeroPag }}
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    Prueba navegación entre páginas
+    <button ion-button full (click)="agregarPagina()">
+      Agregar Página
+    </button>
+    <button ion-button full color="danger" (click)="volver()">
+      Remover Página
+    </button>
+  </ion-content>
