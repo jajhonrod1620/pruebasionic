@@ -8,10 +8,13 @@
   
   <ion-content padding>
     Prueba navegación entre páginas
-    <button ion-button full (click)="agregarPagina()">
+    <button ion-button full
+      [navPush]="elementoPage"
+      [navParams]="{numero: numeroPag + 1}"
+    >
       Agregar Página
     </button>
-    <button ion-button full color="danger" (click)="volver()">
+    <button ion-button full color="danger"navPop>
       Remover Página
     </button>
   </ion-content>

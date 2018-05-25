@@ -7,5 +7,10 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button full (click)="agregarPagina()">Agregar Pagina</button>
+  <button ion-button full
+   [navPush]="elementoPage" 
+   [navParams]= "{numero:1}"
+   >
+   Agregar Pagina
+  </button>
 </ion-content>

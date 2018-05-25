@@ -9,16 +9,9 @@ import { Component } from '@angular/core';
 
 export class ElementoPage {
 numeroPag: number;
+elementoPage = ElementoPage;
 
     constructor(public navCtrl: NavController, navParams: NavParams){
         this.numeroPag = navParams.get('numero');
-    }
-    
-    volver(){
-        this.navCtrl.pop();
-    }
-
-    agregarPagina(){
-        this.navCtrl.push(ElementoPage, {numero:this.numeroPag + 1});
     }
 }

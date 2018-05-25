@@ -8,9 +8,14 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {}
+//2da forma navegacion
+elementoPage = ElementoPage;
 
-  agregarPagina(){
-    this.navCtrl.push(ElementoPage, {numero: 1});
-  }
+  //primera forma navegacion
+  // constructor(public navCtrl: NavController) {}
+
+  // agregarPagina(){
+  //   this.navCtrl.push(ElementoPage, {numero: 1});
+  // }
+  
 }
