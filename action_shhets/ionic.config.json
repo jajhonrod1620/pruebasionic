@@ -1,0 +1,8 @@
+{
+  "name": "action_shhets",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

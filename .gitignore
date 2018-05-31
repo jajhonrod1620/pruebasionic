@@ -67,6 +67,24 @@ buttons/plugins/ios.json
 buttons/www/
 buttons/$RECYCLE.BIN/
 
+action_shhets/.idea/
+action_shhets/.sourcemaps/
+action_shhets/.sass-cache/
+action_shhets/.tmp/
+action_shhets/.versions/
+action_shhets/coverage/
+action_shhets/dist/
+action_shhets/node_modules/
+action_shhets/tmp/
+action_shhets/temp/
+action_shhets/hooks/
+action_shhets/platforms/
+action_shhets/plugins/
+action_shhets/plugins/android.json
+action_shhets/plugins/ios.json
+action_shhets/www/
+action_shhets/$RECYCLE.BIN/
+
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
