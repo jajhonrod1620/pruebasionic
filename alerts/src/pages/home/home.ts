@@ -12,9 +12,23 @@ export class HomePage {
     mostrarAlerta(){
       let alerta = this.alertCtrl.create({
         title: 'Este es el título',
-        subTitle: 'Este es el subtítulo',
+        inputs: [
+          {
+            name:'nombre',
+            placeholder: 'escribe nombre'
+          }
+        ],        
         message: 'Este es el mensaje',
-        buttons: ['OK']
+        buttons: [{
+          text:'Guardar',
+          handler: (data) => {console.log(data.nombre);}
+        },
+        {
+          text:'Cancelar',
+          handler: () => {console.log('cancelar');}
+        }]
       });
+
+      alerta.present();
     }
   }
