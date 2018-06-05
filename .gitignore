@@ -12,6 +12,24 @@ log.txt
 .vscode/
 npm-debug.log*
 
+alerts/.idea/
+alerts/.sourcemaps/
+alerts/.sass-cache/
+alerts/.tmp/
+alerts/.versions/
+alerts/coverage/
+alerts/dist/
+alerts/node_modules/
+alerts/tmp/
+alerts/temp/
+alerts/hooks/
+alerts/platforms/
+alerts/plugins/
+alerts/plugins/android.json
+alerts/plugins/ios.json
+alerts/www/
+alerts/$RECYCLE.BIN/
+
 pila/.idea/
 pila/.sourcemaps/
 pila/.sass-cache/
