@@ -10,24 +10,41 @@ export class HomePage {
   constructor(public alertCtrl: AlertController) {}
 
     mostrarAlerta(){
-      let alerta = this.alertCtrl.create({
-        title: 'Este es el título',
-        inputs: [
-          {
-            name:'nombre',
-            placeholder: 'escribe nombre'
-          }
-        ],        
-        message: 'Este es el mensaje',
-        buttons: [{
-          text:'Guardar',
-          handler: (data) => {console.log(data.nombre);}
-        },
+      let alerta = this.alertCtrl.create();
+
+      alerta.setTitle('Paises de Visitados');
+      alerta.addInput(
         {
-          text:'Cancelar',
-          handler: () => {console.log('cancelar');}
-        }]
-      });
+          type:'checkbox',
+          label: 'Argentina',
+          value: 'argentina'
+        }
+      );
+
+      alerta.addInput(
+        {
+          type:'checkbox',
+          label: 'Colombia',
+          value: 'colombia'
+        }
+      );
+
+      alerta.addInput(
+        {
+          type:'checkbox',
+          label: 'Mexico',
+          value: 'mexico'
+        }
+      );
+
+      alerta.addButton('Cancelar');
+
+      alerta.addButton(
+        {
+          text: 'Ok',
+          handler: data => {console.log('El país de origen es: '+ data)}
+        }
+      )
 
       alerta.present();
     }
