@@ -9,15 +9,12 @@ import { Tab1Page } from './../tab1/tab1';
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
-  tab1Page = Tab1Page;
-  tab2Page = Tab2Page;
-  tab3Page = Tab3Page;
+  tab1page = Tab1Page;
+  tab2page = Tab2Page;
+  tab3page = Tab3Page;
+
+  llamadas = 15;
 
   constructor() {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TabsPage');
-  }
-
 }
