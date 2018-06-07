@@ -7,12 +7,13 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-slides #carousel>
+  <ion-slides #carousel pager>
     <ion-slide *ngFor="let slide of slides">
       <img [src]= "slide.imagen" \>
       <h2>{{slide.titulo}}</h2>
       <p>{{slide.texto}}</p>
-      <button ion-button (click)="anterior()">Anterior</button>
+      <button ion-button *ngIf=!carousel.isBeginning()
+          (click)="anterior()">Anterior</button>
       <button ion-button (click)="siguiente()">Siguiente</button>
     </ion-slide>
     <ion-slide>
