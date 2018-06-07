@@ -12,6 +12,24 @@ log.txt
 .vscode/
 npm-debug.log*
 
+grid/.idea/
+grid/.sourcemaps/
+grid/.sass-cache/
+grid/.tmp/
+grid/.versions/
+grid/coverage/
+grid/dist/
+grid/node_modules/
+grid/tmp/
+grid/temp/
+grid/hooks/
+grid/platforms/
+grid/plugins/
+grid/plugins/android.json
+grid/plugins/ios.json
+grid/www/
+grid/$RECYCLE.BIN/
+
 slides/.idea/
 slides/.sourcemaps/
 slides/.sass-cache/
