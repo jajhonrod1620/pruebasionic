@@ -7,12 +7,18 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-slides>
+  <ion-slides #carousel>
     <ion-slide *ngFor="let slide of slides">
       <img [src]= "slide.imagen" \>
       <h2>{{slide.titulo}}</h2>
       <p>{{slide.texto}}</p>
+      <button ion-button (click)="anterior()">Anterior</button>
+      <button ion-button (click)="siguiente()">Siguiente</button>
     </ion-slide>
-    <ion-slide><h2>Otra pestaña estatica</h2></ion-slide>
+    <ion-slide>
+      <h2>Otra pestaña estatica</h2>
+      <p>Contenido nueva pestaña <br/></p>
+      <button ion-button (click)="volver()">Volver a empezar</button>
+    </ion-slide>
   </ion-slides>
 </ion-content>

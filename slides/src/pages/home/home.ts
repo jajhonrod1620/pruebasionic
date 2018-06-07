@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  @ViewChild('carousel') carousel : Slides;
   slides = [
     {
       titulo: "HTML 5",
@@ -23,5 +24,17 @@ export class HomePage {
       imagen: "../../assets/js.png"
     }
   ];
+
+  volver(){
+    this.carousel.slideTo(0, 1000);
+  }
+
+  anterior(){
+    this.carousel.slidePrev();
+  }
+
+  siguiente(){
+    this.carousel.slideNext();
+  }
 
 }
