@@ -1,14 +1,22 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Lista de Contactos
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content >
+  <ion-list inset no-lines>
+    <button ion-item  [navPush]="contactoPage"
+                      [navParams]=contacto
+    *ngFor="let contacto of contactos">
+    <ion-thumbnail item-left>
+        <img src="../../assets/avatars/{{contacto.imagen}}" alt="">
+    </ion-thumbnail>
+      <h2>{{ contacto.nombre }}</h2>
+      <p>{{ contacto.correo }}</p>
+    </button>
+
+  </ion-list>
 </ion-content>
