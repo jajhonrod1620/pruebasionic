@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{contacto.nombre}} </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col><img src="../../assets/avatars/{{ contacto.imagen }}"></ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>TeléFono : <h2>{{ contacto.telefono }}</h2></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>Correo Elèctronico : <h2>{{ contacto.correo }}</h2></ion-col>
+  </ion-row>
+</ion-content>
