@@ -12,6 +12,24 @@ log.txt
 .vscode/
 npm-debug.log*
 
+menus/.idea/
+menus/.sourcemaps/
+menus/.sass-cache/
+menus/.tmp/
+menus/.versions/
+menus/coverage/
+menus/dist/
+menus/node_modules/
+menus/tmp/
+menus/temp/
+menus/hooks/
+menus/platforms/
+menus/plugins/
+menus/plugins/android.json
+menus/plugins/ios.json
+menus/www/
+menus//$RECYCLE.BIN/
+
 grid/.idea/
 grid/.sourcemaps/
 grid/.sass-cache/
