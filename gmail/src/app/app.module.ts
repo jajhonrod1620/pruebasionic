@@ -8,6 +8,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { InboxPage } from './../pages/inbox/inbox';
+import { CorreosProvider } from '../providers/correos/correos';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { InboxPage } from './../pages/inbox/inbox';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CorreosProvider
   ]
 })
 export class AppModule {}
