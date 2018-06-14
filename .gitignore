@@ -12,6 +12,24 @@ log.txt
 .vscode/
 npm-debug.log*
 
+gmail/.idea/
+gmail/.sourcemaps/
+gmail/.sass-cache/
+gmail/.tmp/
+gmail/.versions/
+gmail/coverage/
+gmail/dist/
+gmail/node_modules/
+gmail/tmp/
+gmail/temp/
+gmail/hooks/
+gmail/platforms/
+gmail/plugins/
+gmail/plugins/android.json
+gmail/plugins/ios.json
+gmail/www/
+gmail///$RECYCLE.BIN/
+
 menus/.idea/
 menus/.sourcemaps/
 menus/.sass-cache/
