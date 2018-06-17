@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>inbox</ion-title>
   </ion-navbar>
 
@@ -10,7 +10,10 @@
 <ion-content padding>
     <ion-list>
       <button ion-item *ngFor="let correo of listaCorreos" 
-        (click)="verCorreo(correo)">
+        (click)="verCorreo(correo)" detail-none>
+        <ion-avatar item-left>
+            <img [src]="'../assets/imagenes/' + correo.nombre.charAt(0) + '.gif'">
+          </ion-avatar>
         <h2>{{ correo.nombre }}</h2>
         <h3>{{ correo.asunto }}</h3>
         <p>{{ correo.mensaje }}</p>

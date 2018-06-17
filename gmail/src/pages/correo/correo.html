@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>correo</ion-title>
   </ion-navbar>
 
@@ -9,7 +9,13 @@
 
 <ion-content padding>
   <h2>{{ correoActual.asunto }}</h2>
-  <h2>{{ correoActual.nombre }}</h2>
-  <h2>{{ correoActual.fecha }}</h2>
-  <h2>{{ correoActual.mensaje }}</h2>
+  <hr>
+  <ion-item>
+    <ion-avatar item-left>
+      <img [src]="'../assets/imagenes/' + correoActual.nombre.charAt(0) + '.gif'">
+    </ion-avatar>
+    <h2>{{ correoActual.nombre }}</h2>
+    <h3>{{ correoActual.fecha }}</h3>
+</ion-item>
+  <p [innerHTML]= "correoActual.mensaje"></p>
 </ion-content>
