@@ -9,7 +9,7 @@
 
 <ion-content padding>
     <ion-list>
-      <button *ngFor="let correo of listaCorreos" 
+      <button ion-item *ngFor="let correo of listaCorreos" 
         (click)="verCorreo(correo)">
         <h2>{{ correo.nombre }}</h2>
         <h3>{{ correo.asunto }}</h3>
