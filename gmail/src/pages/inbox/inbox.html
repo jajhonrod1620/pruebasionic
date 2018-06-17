@@ -9,8 +9,11 @@
 
 <ion-content padding>
     <ion-list inset no-lines>
-      <ion-item *ngFor="let correo of listaCorreos">
-        <h2>{{ correo.asunto }}</h2>
-      </ion-item>
+      <button *ngFor="let correo of listaCorreos" 
+        (click)="verCorreo(correo)">
+        <h2>{{ correo.nombre }}</h2>
+        <h3>{{ correo.asunto }}</h3>
+        <p>{{ correo.mensaje }}</p>
+      </button>
     </ion-list>
 </ion-content>

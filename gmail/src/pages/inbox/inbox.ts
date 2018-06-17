@@ -19,9 +19,9 @@ export class InboxPage {
   }
 
 
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InboxPage');
+  verCorreo(correo){
+    
   }
+
 
 }
