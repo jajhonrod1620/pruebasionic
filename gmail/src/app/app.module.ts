@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -9,12 +8,12 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { InboxPage } from './../pages/inbox/inbox';
 import { CorreosProvider } from '../providers/correos/correos';
-
+import { CorreoPage } from './../pages/correo/correo';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage, InboxPage
+    HomePage, InboxPage, CorreoPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +22,7 @@ import { CorreosProvider } from '../providers/correos/correos';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage, InboxPage
+    HomePage, InboxPage, CorreoPage
   ],
   providers: [
     StatusBar,
