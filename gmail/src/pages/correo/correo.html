@@ -18,4 +18,35 @@
     <h3>{{ correoActual.fecha }}</h3>
 </ion-item>
   <p [innerHTML]= "correoActual.mensaje"></p>
+  <hr>
+  <ion-row>
+    <ion-col>
+      <button ion-button clear>
+        <div>
+          <ion-icon name="ios-undo-outline"></ion-icon>
+          <br />
+          <label>Reply</label>  
+        </div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button clear>
+        <div>
+          <ion-icon name="ios-undo-outline"></ion-icon>
+          <ion-icon name="ios-undo-outline"></ion-icon>
+          <br />
+          <label> Reply All</label>
+        </div>
+      </button>
+    </ion-col>
+    <ion-col>       
+      <button ion-button clear>
+        <div>
+          <ion-icon name="ios-redo-outline"></ion-icon>
+          <br />
+          <label>Forward </label>
+        </div>
+      </button>
+    </ion-col>
+  </ion-row>
 </ion-content>
