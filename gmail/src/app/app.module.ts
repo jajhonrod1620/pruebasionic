@@ -9,11 +9,13 @@ import { HomePage } from '../pages/home/home';
 import { InboxPage } from './../pages/inbox/inbox';
 import { CorreosProvider } from '../providers/correos/correos';
 import { CorreoPage } from './../pages/correo/correo';
+import { NuevocorreoPage } from './../pages/nuevocorreo/nuevocorreo';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage, InboxPage, CorreoPage
+    HomePage, InboxPage, CorreoPage,NuevocorreoPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,7 @@ import { CorreoPage } from './../pages/correo/correo';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage, InboxPage, CorreoPage
+    HomePage, InboxPage, CorreoPage, NuevocorreoPage
   ],
   providers: [
     StatusBar,
