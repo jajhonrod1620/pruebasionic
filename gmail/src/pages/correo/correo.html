@@ -21,7 +21,7 @@
   <hr>
   <ion-row>
     <ion-col>
-      <button ion-button clear (click)="mostrarModal()">
+      <button ion-button clear (click)="mostrarModal('Reply')">
         <div>
           <ion-icon name="ios-undo-outline"></ion-icon>
           <br />
@@ -30,7 +30,7 @@
       </button>
     </ion-col>
     <ion-col>
-      <button ion-button clear>
+      <button ion-button clear (click)="mostrarModal('Reply All')">
         <div>
           <ion-icon name="ios-undo-outline"></ion-icon>
           <ion-icon name="ios-undo-outline"></ion-icon>
@@ -40,7 +40,7 @@
       </button>
     </ion-col>
     <ion-col>       
-      <button ion-button clear>
+      <button ion-button clear (click)="mostrarModal('Reply')">
         <div>
           <ion-icon name="ios-redo-outline"></ion-icon>
           <br />

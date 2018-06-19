@@ -1,8 +1,13 @@
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>nuevocorreo</ion-title>
+  <ion-navbar color="danger">
+    <ion-title>{{ tipo }}</ion-title>
+    <ion-buttons left>
+      <button ion-button (click)="cerrar()" >
+        <ion-icon name="md-arrow-round-back"></ion-icon>
+      </button>
+  </ion-buttons>
   </ion-navbar>
 
 </ion-header>

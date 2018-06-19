@@ -18,8 +18,8 @@ export class CorreoPage {
     this.correoActual = navParams.data;
   }
 
-  mostrarModal(){
-    let modal = this.modalCtrl.create(NuevocorreoPage);
+  mostrarModal(tipo:string){
+    let modal = this.modalCtrl.create(NuevocorreoPage, {tipo:tipo});
     modal.present();
   }
 

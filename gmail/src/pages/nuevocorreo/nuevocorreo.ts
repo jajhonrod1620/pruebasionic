@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the NuevocorreoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,12 +7,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'nuevocorreo.html',
 })
 export class NuevocorreoPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tipo:string;
+  constructor(
+      public navCtrl: NavController, 
+      public navParams: NavParams,
+      public viewCtrl: ViewController) {
+    this.tipo = navParams.get('tipo');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NuevocorreoPage');
+  cerrar(){
+    this.viewCtrl.dismiss();
   }
-
+  
 }
