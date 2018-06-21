@@ -10,6 +10,7 @@ import { InboxPage } from './../pages/inbox/inbox';
 import { CorreosProvider } from '../providers/correos/correos';
 import { CorreoPage } from './../pages/correo/correo';
 import { NuevocorreoPage } from './../pages/nuevocorreo/nuevocorreo';
+import { Toast } from './../providers/correos/toast';
 
 
 @NgModule({
@@ -30,7 +31,6 @@ import { NuevocorreoPage } from './../pages/nuevocorreo/nuevocorreo';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CorreosProvider
-  ]
+    CorreosProvider, Toast]
 })
 export class AppModule {}
