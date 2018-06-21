@@ -25,15 +25,16 @@
     </ion-item>
     <ion-item>
       <ion-label>Para:</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="para"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="Asunto" type="text"></ion-input>
+      <ion-input placeholder="Asunto" type="text" [(ngModel)]="asunto"></ion-input>
     </ion-item>
   </ion-list>
   <ion-textarea rows="10" 
         placeholder="Componer Correo" 
-        type="text">
+        type="text"
+        [(ngModel)]="nuevoCorreo">
   </ion-textarea>
 
 </ion-content>

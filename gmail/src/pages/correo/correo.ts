@@ -19,7 +19,10 @@ export class CorreoPage {
   }
 
   mostrarModal(tipo:string){
-    let modal = this.modalCtrl.create(NuevocorreoPage, {tipo:tipo});
+    let modal = this.modalCtrl.
+      create(
+        NuevocorreoPage,
+         {tipo:tipo, correo: this.correoActual});
     modal.present();
   }
 
