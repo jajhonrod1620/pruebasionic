@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Toast } from '../../providers/correos/toast';
+import { CorreosProvider } from './../../providers/correos/correos';
 
 @IonicPage()
 @Component({
@@ -20,7 +21,8 @@ export class NuevocorreoPage {
       public navCtrl: NavController, 
       public navParams: NavParams,
       public viewCtrl: ViewController,
-      public toastCtrl: Toast) {
+      public toastCtrl: Toast,
+      public correos: CorreosProvider) {
     this.tipo = navParams.get('tipo');
     this.correo = navParams.get('correo');
     if(this.tipo == 'Reply'){
@@ -51,7 +53,7 @@ export class NuevocorreoPage {
     console.log('Asunto: '+correo.asunto);
     console.log('Mensaje: '+correo.mensaje);
     console.log('Fecha: '+correo.fecha);
-
+    this.correos.enviados.push(correo);
     this.viewCtrl.dismiss();
     this.toastCtrl.crearToast('Correo Enviado');
   }

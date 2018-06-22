@@ -41,4 +41,6 @@ export class CorreosProvider {
       fecha: 'Lunes, Enero 2 2017'
     }
   ];
+
+  enviados = [];
 }
