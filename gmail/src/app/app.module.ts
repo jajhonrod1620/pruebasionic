@@ -11,12 +11,13 @@ import { CorreosProvider } from '../providers/correos/correos';
 import { CorreoPage } from './../pages/correo/correo';
 import { NuevocorreoPage } from './../pages/nuevocorreo/nuevocorreo';
 import { Toast } from './../providers/correos/toast';
+import { EnviadosPage } from './../pages/enviados/enviados';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage, InboxPage, CorreoPage,NuevocorreoPage
+    HomePage, InboxPage, CorreoPage,NuevocorreoPage, EnviadosPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,7 @@ import { Toast } from './../providers/correos/toast';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage, InboxPage, CorreoPage, NuevocorreoPage
+    HomePage, InboxPage, CorreoPage, NuevocorreoPage, EnviadosPage
   ],
   providers: [
     StatusBar,

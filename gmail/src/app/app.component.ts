@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { InboxPage } from './../pages/inbox/inbox';
+import { EnviadosPage } from './../pages/enviados/enviados';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { InboxPage } from './../pages/inbox/inbox';
 export class MyApp {
   rootPage:any = InboxPage;
   @ViewChild('nav') menu: NavController;
+  inbox = InboxPage;
+  enviados = EnviadosPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController) {
     platform.ready().then(() => {
