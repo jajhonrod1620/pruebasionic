@@ -7,7 +7,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
     <ion-list>
       <button ion-item *ngFor="let correo of listaCorreos" 
         (click)="verCorreo(correo)" detail-none>
@@ -19,4 +19,9 @@
         <p>{{ correo.mensaje }}</p>
       </button>
     </ion-list>
+    <ion-fab right bottom>
+      <button ion-fab color="danger" (click)="nuevoCorreo()">
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-fab>
 </ion-content>
