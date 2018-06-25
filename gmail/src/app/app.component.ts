@@ -15,6 +15,8 @@ export class MyApp {
   @ViewChild('nav') menu: NavController;
   inbox = InboxPage;
   enviados = EnviadosPage;
+  noLeidosInbox = 6;
+  noLeidosEnviados = 10;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController) {
     platform.ready().then(() => {

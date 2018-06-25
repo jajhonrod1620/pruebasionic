@@ -9,10 +9,12 @@
             <button ion-item (click)= "irAPagina(inbox)">
                 <ion-icon name="mail" item-left></ion-icon>
                 Inbox
+                <ion-badge item-right color="dark">{{noLeidosInbox}}</ion-badge>
             </button>
             <button ion-item (click)= "irAPagina(enviados)">
                 <ion-icon name="send" item-left></ion-icon>
                 Enviados
+                <ion-badge item-right color="dark">{{noLeidosEnviados}}</ion-badge>
             </button>
             
         </ion-list>
