@@ -12,6 +12,8 @@ import { CorreoPage } from './../pages/correo/correo';
 import { NuevocorreoPage } from './../pages/nuevocorreo/nuevocorreo';
 import { Toast } from './../providers/correos/toast';
 import { EnviadosPage } from './../pages/enviados/enviados';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { EnviadosPage } from './../pages/enviados/enviados';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,6 +35,6 @@ import { EnviadosPage } from './../pages/enviados/enviados';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CorreosProvider, Toast]
+    CorreosProvider, Toast, IonicStorageModule]
 })
 export class AppModule {}

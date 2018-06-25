@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Toast } from '../../providers/correos/toast';
 import { CorreosProvider } from './../../providers/correos/correos';
+import { Storage } from '@ionic/storage';
+
+
 
 @IonicPage()
 @Component({
@@ -22,7 +25,8 @@ export class NuevocorreoPage {
       public navParams: NavParams,
       public viewCtrl: ViewController,
       public toastCtrl: Toast,
-      public correos: CorreosProvider) {
+      public correos: CorreosProvider,
+      public storage: Storage) {
     this.tipo = navParams.get('tipo');
     this.correo = navParams.get('correo');
     if(this.tipo == 'Reply'){
@@ -53,7 +57,10 @@ export class NuevocorreoPage {
     console.log('Asunto: '+correo.asunto);
     console.log('Mensaje: '+correo.mensaje);
     console.log('Fecha: '+correo.fecha);
-    this.correos.enviados.push(correo);
+    this.correos.enviados.push(correo);    
+    this.storage.set('correosEnviados', this.correos.enviados)
+        .then()
+        .catch(error => { console.log(error)});
     this.viewCtrl.dismiss();
     this.toastCtrl.crearToast('Correo Enviado');
   }
