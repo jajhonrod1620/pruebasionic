@@ -32,7 +32,7 @@ export class InboxPage {
     let modal = this.modalCtrl.
       create(
         NuevocorreoPage,
-         {tipo: 'nuevo correo',correo: ''});
+         {tipo: 'Nuevo Correo',correo: ''});
     modal.present();
   }
 
