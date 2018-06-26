@@ -12,6 +12,24 @@ log.txt
 .vscode/
 npm-debug.log*
 
+restaurantes/.idea/
+restaurantes/.sourcemaps/
+restaurantes/.sass-cache/
+restaurantes/.tmp/
+restaurantes/.versions/
+restaurantes/coverage/
+restaurantes/dist/
+restaurantes/node_modules/
+restaurantes/tmp/
+restaurantes/temp/
+restaurantes/hooks/
+restaurantes/platforms/
+restaurantes/plugins/
+restaurantes/plugins/android.json
+restaurantes/plugins/ios.json
+restaurantes/www/
+restaurantes/$RECYCLE.BIN/
+
 gmail/.idea/
 gmail/.sourcemaps/
 gmail/.sass-cache/
@@ -28,7 +46,7 @@ gmail/plugins/
 gmail/plugins/android.json
 gmail/plugins/ios.json
 gmail/www/
-gmail///$RECYCLE.BIN/
+gmail/$RECYCLE.BIN/
 
 menus/.idea/
 menus/.sourcemaps/
@@ -46,7 +64,7 @@ menus/plugins/
 menus/plugins/android.json
 menus/plugins/ios.json
 menus/www/
-menus//$RECYCLE.BIN/
+menus/$RECYCLE.BIN/
 
 listas/.idea/
 listas/.sourcemaps/
