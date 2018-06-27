@@ -12,6 +12,7 @@ export class AgregarRestaurantePage {
     lat: 0,
     long: 0
   }
+  ubicacionLista = false;
 
   constructor(public navCtrl: NavController, 
       public navParams: NavParams,
@@ -28,6 +29,7 @@ export class AgregarRestaurantePage {
         .then(info =>{
           this.ubicacion.lat = info.coords.latitude;
           this.ubicacion.long = info.coords.longitude;
+          this.ubicacionLista = true;
 
         })
         .catch(error => {

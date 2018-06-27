@@ -23,7 +23,7 @@
             </button>
         </ion-row>
         <ion-row>
-          <button ion-button block (click)="localizar">
+          <button ion-button block (click)="localizar()">
             <ion-icon name="locate"></ion-icon>
           </button>
         </ion-row>
@@ -31,15 +31,20 @@
       </ion-row>
     </ion-grid>
     <ion-grid>
-        <ion-row>
+        <ion-row *ngIf="ubicacionLista">
           <ion-col>
             <agm-map
               [latitude]="ubicacion.lat"
               [longitude]="ubicacion.long"
-              [zoom]="4"
+              [zoom]="8"
               [streetViewControl]="false"
               [disableDefaultUI]="True"
             >
+              <agm-marker
+                  [latitude]="ubicacion.lat"
+                  [longitude]="ubicacion.long"
+              >
+              </agm-marker>
             </agm-map>
           </ion-col>
         </ion-row>
