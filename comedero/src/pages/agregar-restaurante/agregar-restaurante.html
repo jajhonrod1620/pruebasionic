@@ -19,7 +19,7 @@
         <ion-col>
           <ion-row>
             <button ion-button block>
-              <ion-icon name="camera"></ion-icon>
+              <ion-icon name="camera" (click)="tomarFoto()"></ion-icon>
             </button>
         </ion-row>
         <ion-row>
@@ -47,6 +47,13 @@
               </agm-marker>
             </agm-map>
           </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-slides>
+            <ion-slide *ngFor="let imagen of imagenes">
+              <img [src]="imagen">
+            </ion-slide>
+          </ion-slides>
         </ion-row>
       </ion-grid>
 </ion-content>

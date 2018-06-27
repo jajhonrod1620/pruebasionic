@@ -13,6 +13,7 @@ import { AgmCoreModule } from '@agm/core';
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
 import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Geolocation
+    Geolocation, Camera
   ]
 })
 export class AppModule {}

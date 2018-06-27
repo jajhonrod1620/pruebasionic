@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
 
 @IonicPage()
 @Component({
@@ -13,11 +14,13 @@ export class AgregarRestaurantePage {
     long: 0
   }
   ubicacionLista = false;
+  imagenes: String[] = [];
 
   constructor(public navCtrl: NavController, 
       public navParams: NavParams,
       private geolocation: Geolocation,
-      public toastCtrl: ToastController) {
+      public toastCtrl: ToastController,
+      public camera: Camera) {
   }
 
   ionViewDidLoad() {
@@ -39,6 +42,16 @@ export class AgregarRestaurantePage {
           });
           toast.present();
         })
+  }
+
+  tomarFoto(){
+    this.camera.getPicture({
+      correctOrientation: true
+    })
+        .then(imagenInfo => {
+          this.imagenes.push(imagenInfo);
+        })
+        .catch(error => {})
   }
 
 }
