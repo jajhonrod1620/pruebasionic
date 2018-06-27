@@ -8,7 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RestaurantePage } from '../pages/restaurante/restaurante';
 import { AgregarRestaurantePage } from './../pages/agregar-restaurante/agregar-restaurante';
-import { AgmCoreModule } from 'angular2-google-maps/core';
+//angular maps
+import { AgmCoreModule } from '@agm/core';
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
 

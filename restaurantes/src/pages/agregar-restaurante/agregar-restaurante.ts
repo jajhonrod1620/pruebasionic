@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AgregarRestaurantePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AgregarRestaurantePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ubicacion = {
+    lat: 0,
+    long: 0
+  }
+
+  constructor(public navCtrl: NavController, 
+      public navParams: NavParams, 
+      public geolocation: Geolocation,
+      public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AgregarRestaurantePage');
   }
 
+  localizar(){
+    this.geolocation.getCurrentPosition({ timeout: 3000})
+        .then(info =>{
+          this.ubicacion.lat = info.coords.latitude;
+          this.ubicacion.long = info.coords.longitude;
+
+        })
+        .catch(error => {
+          let toast= this.toastCtrl.create({
+            message: 'No se pudo encontrar ubicacion',
+            duration: 2000
+          });
+          toast.present();
+        })
+
+  }
 }
