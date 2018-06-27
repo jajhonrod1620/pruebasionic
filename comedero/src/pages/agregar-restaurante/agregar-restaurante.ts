@@ -8,15 +8,14 @@ import { Geolocation } from '@ionic-native/geolocation';
   templateUrl: 'agregar-restaurante.html',
 })
 export class AgregarRestaurantePage {
-
   ubicacion = {
     lat: 0,
     long: 0
   }
 
   constructor(public navCtrl: NavController, 
-      public navParams: NavParams, 
-      public geolocation: Geolocation,
+      public navParams: NavParams,
+      private geolocation: Geolocation,
       public toastCtrl: ToastController) {
   }
 
@@ -39,4 +38,5 @@ export class AgregarRestaurantePage {
           toast.present();
         })
   }
+
 }

@@ -12,6 +12,24 @@ log.txt
 .vscode/
 npm-debug.log*
 
+comedero/.idea/
+comedero/.sourcemaps/
+comedero/.sass-cache/
+comedero/.tmp/
+comedero/.versions/
+comedero/coverage/
+comedero/dist/
+comedero/node_modules/
+comedero/tmp/
+comedero/temp/
+comedero/hooks/
+comedero/platforms/
+comedero/plugins/
+comedero/plugins/android.json
+comedero/plugins/ios.json
+comedero/www/
+comedero/$RECYCLE.BIN/
+
 restaurantes/.idea/
 restaurantes/.sourcemaps/
 restaurantes/.sass-cache/
