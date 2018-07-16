@@ -7,9 +7,9 @@
         </ion-toolbar>
     </ion-header>
     <ion-content>
-        <button ion-item (click)="">Inicio</button>
-        <button ion-item (click)="">Iniciar Sesión</button>
-        <button ion-item (click)="">Terminar Sesión</button>
+        <button ion-item (click)="llamarPagina(homepage)">Inicio</button>
+        <button ion-item (click)="llamarPagina(iniciarSesion)">Iniciar Sesión</button>
+        <button ion-item (click)="terminarSesion()">Terminar Sesión</button>
     </ion-content>
 </ion-menu>
 <ion-nav [root]="rootPage" #contenido></ion-nav>

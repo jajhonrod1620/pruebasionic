@@ -14,11 +14,13 @@ import { AgmCoreModule } from '@agm/core';
 import { Ionic2RatingModule } from 'ionic2-rating';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
+import { IniciarsesionPage } from '../pages/iniciarsesion/iniciarsesion';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage, AgregarRestaurantePage, RestaurantePage
+    HomePage, AgregarRestaurantePage, RestaurantePage, 
+    IniciarsesionPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { Camera } from '@ionic-native/camera';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage, AgregarRestaurantePage, RestaurantePage
+    HomePage, AgregarRestaurantePage, RestaurantePage,
+    IniciarsesionPage
   ],
   providers: [
     StatusBar,
