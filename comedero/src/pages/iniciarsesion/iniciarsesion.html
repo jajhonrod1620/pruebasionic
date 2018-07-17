@@ -9,7 +9,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <form #formulario>
+  <form #formulario="ngForm">
     <ion-row>
       <ion-col>
         <ion-item>
@@ -32,7 +32,9 @@
           <ion-input type="password"
             required
             name="clave"
-            ngModel></ion-input>
+            ngModel
+            ></ion-input>
+            <!-- TODO: [minLegth]="8" not working-->
         </ion-item>
       </ion-col>
     </ion-row>

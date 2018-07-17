@@ -15,6 +15,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { IniciarsesionPage } from '../pages/iniciarsesion/iniciarsesion';
+import { AutenticacionService } from './../servicios/autenticacion.service';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { IniciarsesionPage } from '../pages/iniciarsesion/iniciarsesion';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Geolocation, Camera
+    Geolocation, Camera, AutenticacionService
   ]
 })
 export class AppModule {}
