@@ -8,5 +8,49 @@
       </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content>
+  <form #formulario>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label floating>
+            Correo Electronico            
+          </ion-label>
+          <ion-input type="email"
+            required
+            name="correo"
+            ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label floating>
+            Contraseña            
+          </ion-label>
+          <ion-input type="password"
+            required
+            name="clave"
+            ngModel></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block 
+          (click)="iniciarSesion(formulario)">
+          INICIAR SESION
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <button ion-button block 
+            color="danger" (click)="registrarUsuario(formulario)">
+            REGISTRARSE
+          </button>
+        </ion-col>
+      </ion-row>
+  </form>
 </ion-content>
