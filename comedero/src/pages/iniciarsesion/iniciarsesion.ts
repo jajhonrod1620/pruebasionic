@@ -21,7 +21,21 @@ export class IniciarsesionPage {
   }
 
   iniciarSesion(formulario: NgForm){
-
+    this.autenticacionService.iniciarSesion(
+      formulario.value.correo,
+      formulario.value.clave
+    )
+    .then(
+      info => console.log('Usuario Conectado')
+    )
+    .catch(error => {
+      let alerta = this.alertCtrl.create({
+        title: 'Ocurrió un error',
+        message: 'Error Iniciando Sesión' + error,
+        buttons: ['OK']
+      })
+      alerta.present();
+    });
   }
 
   registrarUsuario(formulario: NgForm){
