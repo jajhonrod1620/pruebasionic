@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AgregarRestaurantePage } from './../agregar-restaurante/agregar-restaurante';
 import { Restaurante } from '../../clases/restaurante';
-import { RestauranteService } from '../../servicios/resaurante.service';
+import { RestauranteService } from '../../servicios/restaurante.service';
 
 @Component({
   selector: 'page-home',
@@ -18,7 +18,7 @@ export class HomePage {
   }
 
   ionViewWillEnter(){
-    this.restaurantes = this.restauranteService.cargarRestaurantes();
+    //this.restaurantes = this.restauranteService.cargarRestaurantes();
   }
 
 }

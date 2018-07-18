@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Restaurante } from './../clases/restaurante';
+import { Restaurante } from '../clases/restaurante';
 
 
 @Injectable()
@@ -16,5 +16,9 @@ restaurantes: Restaurante[];
         );
 
         this.restaurantes.push(restaurante);
+    }
+
+    cargarRestaurantes(){
+        return this.restaurantes.slice();
     }
 }

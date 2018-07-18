@@ -16,6 +16,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { IniciarsesionPage } from '../pages/iniciarsesion/iniciarsesion';
 import { AutenticacionService } from './../servicios/autenticacion.service';
+import { RestauranteService } from './../servicios/restaurante.service';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { AutenticacionService } from './../servicios/autenticacion.service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Geolocation, Camera, AutenticacionService
+    Geolocation, Camera, RestauranteService, AutenticacionService
   ]
 })
 export class AppModule {}
