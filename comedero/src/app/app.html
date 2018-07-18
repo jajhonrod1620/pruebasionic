@@ -7,9 +7,12 @@
         </ion-toolbar>
     </ion-header>
     <ion-content>
-        <button ion-item (click)="llamarPagina(homepage)">Inicio</button>
-        <button ion-item (click)="llamarPagina(iniciarSesion)">Iniciar Sesión</button>
-        <button ion-item (click)="terminarSesion()">Terminar Sesión</button>
+        <button ion-item *ngIf="usuarioEstaConectado"
+            (click)="llamarPagina(homepage)">Inicio</button>
+        <button ion-item *ngIf="!usuarioEstaConectado"
+            (click)="llamarPagina(iniciarSesion)">Iniciar Sesión</button>
+        <button ion-item *ngIf="usuarioEstaConectado"
+            (click)="terminarSesion()">Terminar Sesión</button>
     </ion-content>
 </ion-menu>
-<ion-nav [root]="rootPage" #contenido></ion-nav>
+<ion-nav [root]="iniciarSesion" #contenido></ion-nav>

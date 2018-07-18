@@ -7,7 +7,10 @@ export class AutenticacionService{
 
     iniciarSesion(correo: string, clave: string){
         return firebase.auth().signInWithEmailAndPassword(correo, clave);
-        
+    }
+
+    terminarSesion(){
+        firebase.auth().signOut();
     }
 
 }
