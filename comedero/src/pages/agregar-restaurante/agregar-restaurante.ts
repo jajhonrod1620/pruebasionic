@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
+import { NgForm } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -54,4 +55,6 @@ export class AgregarRestaurantePage {
         .catch(error => {})
   }
 
+  agregarRestaurante(formulario: NgForm){}
+    
 }

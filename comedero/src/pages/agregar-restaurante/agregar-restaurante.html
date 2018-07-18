@@ -8,12 +8,14 @@
 
 
 <ion-content>
-  <ion-grid>
+  <form #formulario="ngForm" 
+    (ngSubmit)="agregarRestaurante(formulario)">
+    <ion-grid>
       <ion-row>
         <ion-col col-8>
           <ion-item>
             <ion-label floating>Nombre</ion-label>
-            <ion-input type="text" name="nombre"></ion-input>
+            <ion-input type="text" name="nombre" ngModel required></ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
@@ -57,15 +59,16 @@
         </ion-row>
         <ion-row text-center>
           <ion-col>
-            <rating name="rating"></rating>
+            <rating name="rating" ngModel></rating>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <button ion-button block>
+            <button ion-button block type="submit">
               AGREGAR RESTAURANTE
             </button>
           </ion-col>
         </ion-row>
       </ion-grid>
+    </form>
 </ion-content>
