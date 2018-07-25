@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Restaurante } from './../../clases/restaurante';
 
 @IonicPage()
 @Component({
@@ -7,12 +8,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'restaurante.html',
 })
 export class RestaurantePage {
+  restaurante: Restaurante
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public viewCtrl: ViewController ) {
+      this.restaurante = navParams.get('restaurante');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RestaurantePage');
+  cerrar(){
+    this.viewCtrl.dismiss();
   }
-
 }

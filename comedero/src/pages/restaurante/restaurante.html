@@ -21,15 +21,15 @@
     <ion-row>
       <ion-col>
           <agm-map
-            [latitude]=""
-            [longitude]=""
+            [latitude]="restaurante.ubicacion.lat"
+            [longitude]="restaurante.ubicacion.long"
             [zoom]="8"
             [streetViewControl]="false"
             [disableDefaultUI]="True"
           >
             <agm-marker
-                [latitude]=""
-                [longitude]=""
+              [latitude]="restaurante.ubicacion.lat"
+              [longitude]="restaurante.ubicacion.long"
             >
             </agm-marker>
           </agm-map>
@@ -38,7 +38,9 @@
     <ion-row>
       <ion-col>
         <ion-slides>
-          <ion-slide *ngFor=""></ion-slide>
+          <ion-slide *ngFor="let imagen of restaurante.imagenes">
+              <img [src]="imagen">
+          </ion-slide>
         </ion-slides>
       </ion-col>
     </ion-row>
