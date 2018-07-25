@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, 
+  ToastController, ViewController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { NgForm } from '@angular/forms';
+import { RestauranteService } from './../../servicios/restaurante.service';
 
 @IonicPage()
 @Component({
@@ -15,13 +17,15 @@ export class AgregarRestaurantePage {
     long: 0
   }
   ubicacionLista = false;
-  imagenes: String[] = [];
+  imagenes: string[] = [];
 
   constructor(public navCtrl: NavController, 
       public navParams: NavParams,
       private geolocation: Geolocation,
       public toastCtrl: ToastController,
-      public camera: Camera) {
+      public camera: Camera,
+      public restauranteService: RestauranteService,
+      public viewCtrl: ViewController ) {
   }
 
   ionViewDidLoad() {
@@ -55,6 +59,14 @@ export class AgregarRestaurantePage {
         .catch(error => {})
   }
 
-  agregarRestaurante(formulario: NgForm){}
+  agregarRestaurante(formulario: NgForm){
+    this.restauranteService.agregarRestaurante(
+      formulario.value.nombre, this.imagenes, formulario.value.rating, this.ubicacion);
+      formulario.reset();
+      this.ubicacionLista = false;
+      this.imagenes= [];
+      this.viewCtrl.dismiss();
+
+  }
     
 }

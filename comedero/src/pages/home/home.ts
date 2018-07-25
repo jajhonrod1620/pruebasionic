@@ -18,7 +18,7 @@ export class HomePage {
   }
 
   ionViewWillEnter(){
-    //this.restaurantes = this.restauranteService.cargarRestaurantes();
+    this.restaurantes = this.restauranteService.cargarRestaurantes();
   }
 
 }

@@ -14,8 +14,8 @@
 <ion-content padding>
   <ion-card *ngFor="let restaurante of restaurantes">
     <img [src]="restaurante.imagenes[0]">
-    <div>{{ restaurante.nombre}}</div>
-    <div>{{ restaurante.rating}} estrellas</div>
+    <div class="nombre">{{ restaurante.nombre}}</div>
+    <div class="rating">{{ restaurante.rating}} estrellas</div>
   </ion-card>
   <ion-fab right bottom>
     <button ion-fab color="primary" [navPush]="agregarRestaurantePage">
