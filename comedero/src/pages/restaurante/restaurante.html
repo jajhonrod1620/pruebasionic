@@ -1,18 +1,50 @@
-<!--
-  Generated template for the RestaurantePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="cerrar()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="compartirConWhathasApp()">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>restaurante</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+  <h2>{{restaurante.nombre}}</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <agm-map
+            [latitude]=""
+            [longitude]=""
+            [zoom]="8"
+            [streetViewControl]="false"
+            [disableDefaultUI]="True"
+          >
+            <agm-marker
+                [latitude]=""
+                [longitude]=""
+            >
+            </agm-marker>
+          </agm-map>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-slides>
+          <ion-slide *ngFor=""></ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button color="danger">Borrar Restaurante</button>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
