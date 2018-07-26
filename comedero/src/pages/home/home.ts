@@ -3,7 +3,8 @@ import { NavController, ModalController } from 'ionic-angular';
 import { AgregarRestaurantePage } from './../agregar-restaurante/agregar-restaurante';
 import { Restaurante } from '../../clases/restaurante';
 import { RestauranteService } from '../../servicios/restaurante.service';
-import { RestaurantePage } from './../../../../restaurantes/src/pages/restaurante/restaurante';
+import { RestaurantePage } from '../restaurante/restaurante';
+
 
 
 @Component({
