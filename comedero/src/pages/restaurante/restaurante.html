@@ -6,7 +6,7 @@
       </button>
     </ion-buttons>
     <ion-buttons right>
-      <button ion-button icon-only (click)="compartirConWhathasApp()">
+      <button ion-button icon-only (click)="compartirConWhatsApp()">
         <ion-icon name="share"></ion-icon>
       </button>
     </ion-buttons>
@@ -22,14 +22,14 @@
       <ion-col>
           <agm-map
             [latitude]="restaurante.ubicacion.lat"
-            [longitude]="restaurante.ubicacion.long"
+            [longitude]="restaurante.ubicacion.lng"
             [zoom]="8"
             [streetViewControl]="false"
             [disableDefaultUI]="True"
           >
             <agm-marker
               [latitude]="restaurante.ubicacion.lat"
-              [longitude]="restaurante.ubicacion.long"
+              [longitude]="restaurante.ubicacion.lng"
             >
             </agm-marker>
           </agm-map>
@@ -45,7 +45,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <button color="danger">Borrar Restaurante</button>
+      <button ion-button color="danger" block>Borrar Restaurante</button>
     </ion-row>
   </ion-grid>
 

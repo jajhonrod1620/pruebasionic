@@ -14,7 +14,7 @@ import { RestauranteService } from './../../servicios/restaurante.service';
 export class AgregarRestaurantePage {
   ubicacion = {
     lat: 0,
-    long: 0
+    lng: 0
   }
   ubicacionLista = false;
   imagenes: string[] = [];
@@ -36,7 +36,7 @@ export class AgregarRestaurantePage {
     this.geolocation.getCurrentPosition({ timeout: 3000})
         .then(info =>{
           this.ubicacion.lat = info.coords.latitude;
-          this.ubicacion.long = info.coords.longitude;
+          this.ubicacion.lng = info.coords.longitude;
           this.ubicacionLista = true;
 
         })
