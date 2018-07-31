@@ -1,11 +1,9 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>agregarRestaurante</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Agregar Restaurante</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content>
   <form #formulario="ngForm" 
@@ -64,7 +62,9 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <button ion-button block type="submit">
+            <button ion-button block type="submit"
+            [disabled]="!formulario.valid || 
+              !ubicacionLista || imagenes.length <= 0">
               AGREGAR RESTAURANTE
             </button>
           </ion-col>
