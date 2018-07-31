@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { AgregarRestaurantePage } from './../agregar-restaurante/agregar-restaurante';
 import { Restaurante } from '../../clases/restaurante';
@@ -11,14 +11,21 @@ import { RestaurantePage } from '../restaurante/restaurante';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  
   agregarRestaurantePage = AgregarRestaurantePage;
   restaurantes:Restaurante[] = [];
 
   constructor(public navCtrl: NavController,
     public restauranteService: RestauranteService,
-    public modalCtrl: ModalController) {
-
+    public modalCtrl: ModalController) {}
+    
+  ngOnInit() {
+    this.restauranteService.inicializarRestaurantes()
+        .then((restaurantes: Restaurante[])=> {
+          this.restaurantes = restaurantes;
+        })
+        .catch(error => {console.log(error)});
   }
 
   ionViewWillEnter(){
