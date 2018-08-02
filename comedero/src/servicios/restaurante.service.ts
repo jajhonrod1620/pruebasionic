@@ -1,13 +1,18 @@
+import { ToastController } from 'ionic-angular';
 import { Injectable } from "@angular/core";
 import { Restaurante } from '../clases/restaurante';
 import { Storage } from '@ionic/storage';
+import { File } from '@ionic-native/file';
 
+declare var cordova: any;
 
 @Injectable()
 export class RestauranteService{
 restaurantes: Restaurante[] =[];
 
-constructor(private storage: Storage) {}
+constructor(private storage: Storage,
+    private file: File,
+    public toastCtrlr: ToastController) {}
 
     agregarRestaurante(nombre: string,
         imagenes: string[],
@@ -37,5 +42,35 @@ constructor(private storage: Storage) {}
                     return this.restaurantes.slice();
                 })
                 .catch(error => {console.log(error)});
+    }
+
+    borrarRestaurante(rid: number){
+        let restaurante = this.restaurantes[rid];
+        this.restaurantes.splice(rid, 1);
+        this.storage.set('restaurantes', this.restaurantes)
+            .then(() => {
+                this.borrarImagenes(restaurante);
+            })
+            .catch();
+    }
+
+    borrarImagenes(restaurante: Restaurante){
+        restaurante.imagenes.forEach((imagen) => {
+            let nombre = imagen.substr(imagen.lastIndexOf('/')+ 1);
+            this.file.removeFile(cordova.file.dataDirectory, nombre)
+                .then()
+                .catch(error => {
+                    let toast = this.toastCtrlr.create({
+                        message: 'Ocurrió un error. File.movFile',
+                        duration: 3000
+                      });
+                      toast.present();
+                      this.agregarRestaurante(
+                        restaurante.nombre,
+                        restaurante.imagenes,
+                        restaurante.rating,
+                        restaurante.ubicacion)
+                });
+        })
     }
 }

@@ -31,9 +31,13 @@ export class HomePage implements OnInit {
   ionViewWillEnter(){
     this.restaurantes = this.restauranteService.cargarRestaurantes();
   }
-  mostrarRestaurante(restaurante: Restaurante){
+  mostrarRestaurante(restaurante: Restaurante, rid: number){
     let modal = this.modalCtrl
-        .create(RestaurantePage, {restaurante: restaurante});
+        .create(RestaurantePage, 
+          {restaurante: restaurante, rid: rid});
     modal.present();
+    modal.onDidDismiss(() => {
+      this.restaurantes = this.restauranteService.cargarRestaurantes();
+    })
   }
 }

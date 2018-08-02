@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Restaurante } from './../../clases/restaurante';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { RestauranteService } from '../../servicios/restaurante.service';
 
 @IonicPage()
 @Component({
@@ -9,17 +10,25 @@ import { SocialSharing } from '@ionic-native/social-sharing';
   templateUrl: 'restaurante.html',
 })
 export class RestaurantePage {
-  restaurante: Restaurante
+  restaurante: Restaurante;
+  rid: number;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private socialSharing: SocialSharing ) {
+    private socialSharing: SocialSharing,
+    public restauranteService: RestauranteService ) {
       this.restaurante = navParams.get('restaurante');
+      this.rid = navParams.get('rid');
   }
 
   cerrar(){
     this.viewCtrl.dismiss();
+  }
+
+  borrar(){
+    this.restauranteService.borrarRestaurante(this.rid);
+    this.cerrar();
   }
 
   compartirConWhatsApp(){
