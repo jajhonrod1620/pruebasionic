@@ -16,7 +16,15 @@
     (click)= "mostrarRestaurante(restaurante)">
     <img [src]="restaurante.imagenes[0]">
     <div class="nombre">{{ restaurante.nombre}}</div>
-    <div class="rating">{{ restaurante.rating}} estrellas</div>
+    <div class="rating">
+      <ion-row text-center>
+        <ion-col>
+          <rating name="rating" [ngModel]="restaurante.rating"
+            readOnly="true">
+          </rating>
+        </ion-col>
+      </ion-row>
+    </div>
   </ion-card>
   <ion-fab right bottom>
     <button ion-fab color="primary" [navPush]="agregarRestaurantePage">

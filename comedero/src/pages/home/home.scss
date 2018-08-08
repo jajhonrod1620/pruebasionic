@@ -20,7 +20,16 @@ page-home {
         position: absolute;
         top: 52%;
         width: 100%;
-        color: #ffffff;
+    }
+
+    rating{
+        font-size: 2em;
+        color: orange;
+    }
+
+    rating ul{
+        padding-left: 0px;
+        margin: 0px;
     }
 
 }
