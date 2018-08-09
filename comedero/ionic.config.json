@@ -3,5 +3,7 @@
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "email": "jajhonrod@gmail.com",
+  "password": "Ljunb3rg*"
 }
