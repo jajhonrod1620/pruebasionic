@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Restaurante } from './../../clases/restaurante';
-import { SocialSharing } from '@ionic-native/social-sharing';
+//import { SocialSharing } from '@ionic-native/social-sharing';
 
 @IonicPage()
 @Component({
@@ -13,8 +13,7 @@ export class RestaurantePage {
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-    public viewCtrl: ViewController,
-    private socialSharing: SocialSharing ) {
+    public viewCtrl: ViewController ) {
       this.restaurante = navParams.get('restaurante');
   }
 
@@ -22,11 +21,13 @@ export class RestaurantePage {
     this.viewCtrl.dismiss();
   }
 
-  compartirConWhatsApp(){
+  /* compartirConWhatsApp(){
     let mensaje = this.restaurante.nombre;
     let url = "http://www.google.com/maps/@"
               + this.restaurante.ubicacion.lat + ","
               + this.restaurante.ubicacion.lng + ",9z?hl=es";
-    this.socialSharing.shareViaWhatsApp(mensaje, this.restaurante.imagenes[0], url);
-  }
+    this.socialSharing.shareViaWhatsApp(mensaje, this.restaurante.imagenes[0], url)
+        .then(()=>{})
+        .catch(()=>{});
+  } */
 }
