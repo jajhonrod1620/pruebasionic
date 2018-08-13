@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, 
   ToastController, ViewController } from 'ionic-angular';
-import { Geolocation } from '@ionic-native/geolocation';
-import { Camera } from '@ionic-native/camera';
 import { NgForm } from '@angular/forms';
 import { RestauranteService } from './../../servicios/restaurante.service';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
+
+declare var cordova: any;
 
 @IonicPage()
 @Component({
@@ -25,7 +28,8 @@ export class AgregarRestaurantePage {
       public toastCtrl: ToastController,
       public camera: Camera,
       public restauranteService: RestauranteService,
-      public viewCtrl: ViewController ) {
+      public viewCtrl: ViewController,
+      private file: File ) {
   }
 
   ionViewDidLoad() {
@@ -54,9 +58,37 @@ export class AgregarRestaurantePage {
       correctOrientation: true
     })
         .then(imagenInfo => {
-          this.imagenes.push(imagenInfo);
+          //this.imagenes.push(imagenInfo);
+          // /file/storage/native/0/nombre.jpg
+          let path = imagenInfo.subtsr(0,
+            imagenInfo.lastIndexOf('/' + 1));
+          let nombre = imagenInfo.substr(
+            imagenInfo.lastIndexOf('/' + 1));
+          
+          let nuevoNombre = new Date().getMilliseconds() + '.jpg';
+          this.file.moveFile(path, nombre,cordova.file.dataDirectory, nuevoNombre)
+              //.then(info: Entry) =>{ ???
+              .then((info) =>{
+                this.imagenes.push(imagenInfo);
+                this.camera.cleanup();
+              })
+              .catch(error => {
+                let toast = this.toastCtrl.create({
+                  message: 'Ocurrió un error. File.movFile',
+                  duration: 3000
+                })
+                toast.present();
+                this.camera.cleanup();
+              });
         })
-        .catch(error => {})
+        .catch(error => {
+          let toast = this.toastCtrl.create({
+            message: 'Ocurrió un error. Camera.GetPicture',
+            duration: 3000
+          })
+          toast.present();
+          this.camera.cleanup();
+        })
   }
 
   agregarRestaurante(formulario: NgForm){

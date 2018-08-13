@@ -17,6 +17,7 @@ import { Camera } from '@ionic-native/camera';
 import { IniciarsesionPage } from '../pages/iniciarsesion/iniciarsesion';
 import { AutenticacionService } from './../servicios/autenticacion.service';
 import { RestauranteService } from './../servicios/restaurante.service';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { RestauranteService } from './../servicios/restaurante.service';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAogk0DQtQNLaPmSHuIpR7AcjuTEhBQ9Yw'
     }),
-    Ionic2RatingModule
+    Ionic2RatingModule, IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-buttons left>
       <button ion-button icon-only (click)="cerrar()">
         <ion-icon name="close"></ion-icon>
@@ -44,9 +44,18 @@
         </ion-slides>
       </ion-col>
     </ion-row>
+    <ion-row text-center>
+      <ion-col>
+        <rating name="rating" [ngModel]="restaurante.rating"
+          readOnly="true">
+        </rating>
+      </ion-col>
+    </ion-row>
     <ion-row>
-      <button ion-button color="danger" block>Borrar Restaurante</button>
+      <button ion-button color="danger" block
+        (click)= "borrar()">
+        Borrar Restaurante
+      </button>
     </ion-row>
   </ion-grid>
-
 </ion-content>

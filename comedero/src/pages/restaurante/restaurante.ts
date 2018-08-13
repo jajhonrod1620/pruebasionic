@@ -3,18 +3,21 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 import { Restaurante } from './../../clases/restaurante';
 //import { SocialSharing } from '@ionic-native/social-sharing';
 
+
 @IonicPage()
 @Component({
   selector: 'page-restaurante',
   templateUrl: 'restaurante.html',
 })
 export class RestaurantePage {
-  restaurante: Restaurante
+  restaurante: Restaurante;
+  rid: number;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public viewCtrl: ViewController ) {
       this.restaurante = navParams.get('restaurante');
+      this.rid = navParams.get('rid');
   }
 
   cerrar(){
