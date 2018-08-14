@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -12,12 +10,17 @@ import { AgregarRestaurantePage } from './../pages/agregar-restaurante/agregar-r
 import { AgmCoreModule } from '@agm/core';
 // Import ionic2-rating module
 import { Ionic2RatingModule } from 'ionic2-rating';
+import { File } from '@ionic-native/file';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { IniciarsesionPage } from '../pages/iniciarsesion/iniciarsesion';
 import { AutenticacionService } from './../servicios/autenticacion.service';
 import { RestauranteService } from './../servicios/restaurante.service';
 import { IonicStorageModule } from '@ionic/storage';
+
 
 
 @NgModule({
@@ -44,7 +47,8 @@ import { IonicStorageModule } from '@ionic/storage';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Geolocation, Camera, RestauranteService, AutenticacionService
+    File, Geolocation, Camera, SocialSharing, StatusBar,
+     SplashScreen, RestauranteService, AutenticacionService
   ]
 })
 export class AppModule {}

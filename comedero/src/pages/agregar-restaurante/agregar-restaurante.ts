@@ -5,7 +5,8 @@ import { NgForm } from '@angular/forms';
 import { RestauranteService } from './../../servicios/restaurante.service';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
-import { File } from '@ionic-native/file';
+import { File, Entry } from '@ionic-native/file';
+import { database } from 'firebase';
 
 declare var cordova: any;
 
@@ -64,12 +65,11 @@ export class AgregarRestaurantePage {
             imagenInfo.lastIndexOf('/' + 1));
           let nombre = imagenInfo.substr(
             imagenInfo.lastIndexOf('/' + 1));
-          
           let nuevoNombre = new Date().getMilliseconds() + '.jpg';
           this.file.moveFile(path, nombre,cordova.file.dataDirectory, nuevoNombre)
-              //.then(info: Entry) =>{ ???
-              .then((info) =>{
-                this.imagenes.push(imagenInfo);
+              .then((data: Entry) =>{
+              //.then((info) =>{
+                this.imagenes.push(data.nativeURL);
                 this.camera.cleanup();
               })
               .catch(error => {
