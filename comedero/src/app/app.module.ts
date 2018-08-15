@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -14,10 +12,15 @@ import { AgmCoreModule } from '@agm/core';
 import { Ionic2RatingModule } from 'ionic2-rating';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
 import { IniciarsesionPage } from '../pages/iniciarsesion/iniciarsesion';
 import { AutenticacionService } from './../servicios/autenticacion.service';
 import { RestauranteService } from './../servicios/restaurante.service';
 import { IonicStorageModule } from '@ionic/storage';
+
 
 
 @NgModule({
@@ -44,7 +47,8 @@ import { IonicStorageModule } from '@ionic/storage';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Geolocation, Camera, RestauranteService, AutenticacionService
+    Geolocation, Camera, RestauranteService, AutenticacionService,
+    SocialSharing, File
   ]
 })
 export class AppModule {}

@@ -5,7 +5,7 @@ import { NgForm } from '@angular/forms';
 import { RestauranteService } from './../../servicios/restaurante.service';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
-import { File } from '@ionic-native/file';
+import { File, Entry } from '@ionic-native/file';
 
 declare var cordova: any;
 
@@ -55,21 +55,24 @@ export class AgregarRestaurantePage {
 
   tomarFoto(){
     this.camera.getPicture({
+      encodingType: this.camera.EncodingType.JPEG,
       correctOrientation: true
     })
         .then(imagenInfo => {
           //this.imagenes.push(imagenInfo);
           // /file/storage/native/0/nombre.jpg
-          let path = imagenInfo.subtsr(0,
-            imagenInfo.lastIndexOf('/' + 1));
-          let nombre = imagenInfo.substr(
-            imagenInfo.lastIndexOf('/' + 1));
+          // let path = imagenInfo.subtsr(0,
+          //   imagenInfo.lastIndexOf('/' + 1));
+          // let nombre = imagenInfo.substr(
+          //   imagenInfo.lastIndexOf('/' + 1));
+          let nombre = imagenInfo.replace(/^.*[\\\/]/, '');
+          let path = imagenInfo.replace(/[^\/]*$/, '');
           
           let nuevoNombre = new Date().getMilliseconds() + '.jpg';
           this.file.moveFile(path, nombre,cordova.file.dataDirectory, nuevoNombre)
-              //.then(info: Entry) =>{ ???
-              .then((info) =>{
-                this.imagenes.push(imagenInfo);
+              .then((info: Entry) =>{
+              //.then((info) =>{
+                this.imagenes.push(info.nativeURL);
                 this.camera.cleanup();
               })
               .catch(error => {
