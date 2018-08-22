@@ -13,7 +13,7 @@
 
 <ion-content padding>
   <ion-card *ngFor="let restaurante of restaurantes; let rid = index"
-    (click)= "mostrarRestaurante(restaurante)">
+    (click)= "mostrarRestaurante(restaurante, rid)">
     <img [src]="restaurante.imagenes[0]">
     <div class="nombre">{{ restaurante.nombre}}</div>
     <div class="rating">

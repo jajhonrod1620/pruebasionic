@@ -59,12 +59,6 @@ export class AgregarRestaurantePage {
       correctOrientation: true
     })
         .then(imagenInfo => {
-          //this.imagenes.push(imagenInfo);
-          // /file/storage/native/0/nombre.jpg
-          // let path = imagenInfo.subtsr(0,
-          //   imagenInfo.lastIndexOf('/' + 1));
-          // let nombre = imagenInfo.substr(
-          //   imagenInfo.lastIndexOf('/' + 1));
           let nombre = imagenInfo.replace(/^.*[\\\/]/, '');
           let path = imagenInfo.replace(/[^\/]*$/, '');
           
